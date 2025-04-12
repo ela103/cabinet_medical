@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinique Médicale - Rendez-vous</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .appointment-form {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .appointments-list {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .appointment-card {
+            background-color: #fff;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Clinique Médicale</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="appointments.html" class="active">Rendez-vous</a></li>
+                <li><a href="doctors.html">Nos Médecins</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="appointment-form">
+            <h2>Prendre un rendez-vous</h2>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctor">Médecin</label>
+                    <select id="doctor" name="doctor" required>
+                        <option value="">Sélectionnez un médecin</option>
+                        <option value="dr-smith">Dr. Smith - Cardiologue</option>
+                        <option value="dr-johnson">Dr. Johnson - Dermatologue</option>
+                        <option value="dr-williams">Dr. Williams - Généraliste</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Heure</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="reason">Motif de la consultation</label>
+                    <textarea id="reason" name="reason" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Confirmer le rendez-vous</button>
+            </form>
+        </div>
+
+        <div class="appointments-list">
+            <h2>Mes rendez-vous</h2>
+            <div id="appointmentsList">
+                <!-- Les rendez-vous seront ajoutés ici dynamiquement via JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Clinique Médicale. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
